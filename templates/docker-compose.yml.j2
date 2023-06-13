@@ -12,8 +12,8 @@ services:
       ND_SESSIONTIMEOUT: 24h
       ND_BASEURL: ""
     volumes:
-      - "{{ navidrome_host_config_path }}/data:/data"
-      - "{{ navidrome_host_data_path }}/music:/music:ro"
+      - "{{ navidrome_host_data_path }}:/data"
+      - "{{ navidrome_host_music_path }}:/music:ro"
     ports:
       - {{ navidrome_host_port }}:4533
     restart: unless-stopped

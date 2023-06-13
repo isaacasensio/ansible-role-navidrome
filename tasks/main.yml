@@ -27,8 +27,8 @@
     mode: 0755
   loop:
     - "{{ navidrome_host_config_path }}"
-    - "{{ navidrome_host_config_path }}/data"
-    - "{{ navidrome_host_data_path }}/music"
+    - "{{ navidrome_host_data_path }}"
+    - "{{ navidrome_host_music_path }}"
 
 - name: Copy navidrome docker-compose template.
   ansible.builtin.template:

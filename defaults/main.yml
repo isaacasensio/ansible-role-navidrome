@@ -2,5 +2,6 @@
 navidrome_image: "deluan/navidrome:latest"
 navidrome_host_config_path: /etc/navidrome
 navidrome_host_data_path: /var/lib/navidrome
+navidrome_host_music_path: /var/lib/navidrome/music
 navidrome_container_user: navidrome
 navidrome_host_port: 4533
