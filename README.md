@@ -44,6 +44,15 @@ Including an example of how to use your role (for instance, with variables passe
       roles:
          - iasensio.navidrome
 
+Usage
+-----
+
+Force re-scan by running the following command:
+
+```
+docker-compose exec navidrome /app/navidrome scan -f
+```
+
 License
 -------
 
