@@ -1,0 +1,16 @@
+[Unit]
+Description=navidrome
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+User={{ navidrome_container_user }}
+Group=docker
+WorkingDirectory={{ navidrome_host_config_path }}
+ExecStartPre=/usr/local/bin/docker-compose -f {{ navidrome_host_config_path }}/docker-compose.yml down
+ExecStart=/usr/local/bin/docker-compose -f {{ navidrome_host_config_path }}/docker-compose.yml up
+ExecStop=/usr/local/bin/docker-compose -f {{ navidrome_host_config_path }}/docker-compose.yml down
+
+[Install]
+WantedBy=multi-user.target

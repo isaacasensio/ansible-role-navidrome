@@ -1,0 +1,19 @@
+# {{ ansible_managed }}
+---
+version: "3"
+services:
+  navidrome:
+    image: {{ navidrome_image }}
+    container_name: navidrome
+    user: {{ created_uid }}:{{ created_gid }}
+    environment:
+      ND_SCANSCHEDULE: 1h
+      ND_LOGLEVEL: info  
+      ND_SESSIONTIMEOUT: 24h
+      ND_BASEURL: ""
+    volumes:
+      - "{{ navidrome_host_config_path }}/data:/data"
+      - "{{ navidrome_host_data_path }}/music:/music:ro"
+    ports:
+      - {{ navidrome_host_port }}:4533
+    restart: unless-stopped

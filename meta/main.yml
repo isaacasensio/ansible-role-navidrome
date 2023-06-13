@@ -1,0 +1,20 @@
+---
+galaxy_info:
+  role_name: navidrome
+  author: iasensio
+  description: Install navidrome as a docker container
+  company: MyMac, LLC
+  license: MIT
+  min_ansible_version: "2.4"
+
+  platforms:
+    - name: Debian
+      versions:
+        - bullseye
+
+  galaxy_tags:
+    - system
+    - docker
+    - bullseye
+    - music
+    - media
